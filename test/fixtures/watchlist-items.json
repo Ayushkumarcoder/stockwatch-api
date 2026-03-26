@@ -1,0 +1,71 @@
+{
+  "validItems": [
+    {
+      "symbol": "AAPL",
+      "userId": 1,
+      "addedAt": "2026-01-15T10:00:00Z"
+    },
+    {
+      "symbol": "GOOGL",
+      "userId": 1,
+      "addedAt": "2026-01-20T14:30:00Z"
+    },
+    {
+      "symbol": "MSFT",
+      "userId": 1,
+      "addedAt": "2026-02-05T09:15:00Z"
+    },
+    {
+      "symbol": "TSLA",
+      "userId": 2,
+      "addedAt": "2026-02-10T11:45:00Z"
+    },
+    {
+      "symbol": "AMZN",
+      "userId": 2,
+      "addedAt": "2026-02-15T16:20:00Z"
+    }
+  ],
+  "createPayloads": [
+    {
+      "symbol": "nvda",
+      "userId": 1,
+      "description": "Should create item with lowercase symbol converted to uppercase"
+    },
+    {
+      "symbol": "META",
+      "userId": 3,
+      "description": "Should create item with already uppercase symbol"
+    },
+    {
+      "symbol": "amd",
+      "userId": 2,
+      "description": "Should create item and auto-set addedAt timestamp"
+    }
+  ],
+  "updatePayloads": [
+    {
+      "symbol": "goog",
+      "description": "Update symbol to different value"
+    },
+    {
+      "userId": 5,
+      "description": "Update userId"
+    }
+  ],
+  "invalidItems": [
+    {
+      "userId": 1,
+      "description": "Missing required symbol field"
+    },
+    {
+      "symbol": "AAPL",
+      "description": "Missing required userId field"
+    },
+    {
+      "symbol": "",
+      "userId": 1,
+      "description": "Empty symbol string"
+    }
+  ]
+}

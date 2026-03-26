@@ -5,6 +5,8 @@
 
 'use strict';
 
+require('dotenv').config();
+
 const loopback = require('loopback');
 const boot = require('loopback-boot');
 
