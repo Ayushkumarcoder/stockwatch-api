@@ -1,0 +1,26 @@
+{
+  "name": "WatchlistItem",
+  "plural": "watchlist-items",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "symbol": {
+      "type": "string",
+      "required": true
+    },
+    "userId": {
+      "type": "number",
+      "required": true
+    },
+    "addedAt": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

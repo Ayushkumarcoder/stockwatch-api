@@ -5,6 +5,8 @@
 
 'use strict';
 
+require('dotenv').config();
+
 const loopback = require('loopback');
 const boot = require('loopback-boot');
 
@@ -12,7 +14,7 @@ const app = module.exports = loopback();
 
 app.start = function() {
   // start the web server
-  return app.listen(function() {
+  const server = app.listen(function() {
     app.emit('started');
     const baseUrl = app.get('url').replace(/\/$/, '');
     console.log('Web server listening at: %s', baseUrl);
@@ -20,7 +22,13 @@ app.start = function() {
       const explorerPath = app.get('loopback-component-explorer').mountPath;
       console.log('Browse your REST API at %s%s', baseUrl, explorerPath);
     }
+
+    var setupPriceBroadcaster = require('./price-broadcaster');
+    setupPriceBroadcaster(server);
+
   });
+
+  return server;
 };
 
 // Bootstrap the application, configure models, datasources and middleware.

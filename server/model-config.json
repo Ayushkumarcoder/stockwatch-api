@@ -34,5 +34,13 @@
   "Role": {
     "dataSource": "db",
     "public": false
+  },
+  "WatchlistItem": {
+    "dataSource": "stockwatchDb",
+    "public": true
+  },
+  "Stock": {
+    "dataSource": "db",
+    "public": true
   }
 }
